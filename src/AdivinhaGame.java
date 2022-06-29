@@ -16,6 +16,7 @@ public class AdivinhaGame {
         System.out.println(" vamente, mas o computador esco-  ");
         System.out.println(" lherá um novo numero             ");
 
+
         int iniciar,  numeroUser, dificuldade, pontos =0, troca;
         float numeroUser2;
         Scanner input = new Scanner(System.in);
