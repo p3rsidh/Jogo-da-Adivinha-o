@@ -19,7 +19,7 @@ public class AdivinhaGame {
         Scanner input = new Scanner(System.in);
         boolean jogar = true, continuar = true;
         Random rand = new Random();
-        String nome;
+        String nome = "";
 
         while (jogar == true){
             System.out.println("Você deseja jogar Jogo da Adivinhação?");
@@ -51,26 +51,28 @@ public class AdivinhaGame {
                         numeroUser = input.nextInt();
 
                         if (numeroUser == (numero1 - 1)){
-                            System.out.println("Voce está perto");
+                            System.out.println("Voce está perto...");
                             pontos = pontos + 5;
                         } else if (numeroUser == (numero1 + 1)){
-                            System.out.println("Voce está perto");
+                            System.out.println("Voce está perto...");
                             pontos = pontos + 5;
                         }else if(numeroUser == numero1){
                             System.out.println("Você acertou!!!");
                             pontos = pontos + 10;
-                            System.out.println(nome +"fez  " +pontos +" pontos");
+                            System.out.println(nome +" fez  " +pontos +" pontos");
                             continuar = false;
                         } else {
-                            System.out.println("Que pena, você errou");
+                            System.out.println("Que pena, você errou...");
                             System.out.println("GAME OVER");
-                            System.out.println(nome +"fez  " +pontos +" pontos");
+                            System.out.println(nome +" fez  " +pontos +" pontos");
                             continuar = false;
                         }}
                         break;
                     case 2:
-                        System.out.println("O computador ja escolheu um numero");
-                        System.out.println("Escolha um numero de 0 a 20");
+                        System.out.println("O computador ja escolheu um número");
+                        continuar = true;
+                        while (continuar == true){
+                        System.out.println("Escolha um numero inteiro de 0 a 20");
                         numeroUser = input.nextInt();
                         if (numeroUser == (numero2 - 1)){
                             System.out.println("Voce está perto");
@@ -82,31 +84,37 @@ public class AdivinhaGame {
                             System.out.println("Você acertou!!!");
                             pontos = pontos + 10;
                             System.out.println(nome +"fez  " +pontos +" pontos");
+                            continuar = false;
                         } else {
-                            System.out.println("Que pena, você errou");
+                            System.out.println("Que pena, você errou...");
                             System.out.println("GAME OVER");
                             System.out.println(nome +"fez  " +pontos +" pontos");
-                        }
+                            continuar = false;
+                        }}
                         break;
                     case 3:
                         System.out.println("O computador ja escolheu um numero");
+                        continuar = true;
+                        while (continuar == true){
                         System.out.println("Escolha um numero decimal de 0 a 20");
                         numeroUser2 = input.nextFloat();
                         if (numeroUser2 == (numero3 - 1)){
-                            System.out.println("Voce está perto");
+                            System.out.println("Você está perto");
                             pontos = pontos + 5;
                         } else if (numeroUser2 == (numero3 + 1)){
-                            System.out.println("Voce está perto");
+                            System.out.println("Você está perto");
                             pontos = pontos + 5;
                         }else if(numeroUser2 == numero3){
                             System.out.println("Você acertou!!!");
                             pontos = pontos + 10;
-                            System.out.println(nome +"fez  " +pontos +" pontos");
+                            System.out.println(nome +" fez  " +pontos +" pontos");
+                            continuar = false;
                         } else {
-                            System.out.println("Que pena, você errou");
+                            System.out.println("Que pena, você errou...");
                             System.out.println("GAME OVER");
-                            System.out.println(nome +"fez  " +pontos +" pontos");
-                        }
+                            System.out.println(nome +" fez  " +pontos +" pontos");
+                            continuar = false;
+                        }}
                         break;
 
                 }
