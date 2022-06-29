@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -25,14 +27,18 @@ public class AdivinhaGame {
             System.out.println("Você deseja jogar Jogo da Adivinhação?");
             System.out.println("Digite 1 para sim, 2 para não");
             iniciar = input.nextInt();
+            List acertos = new ArrayList<>();
+            List erros = new ArrayList<>();
 
             if(iniciar == 1){
-                System.out.println("Deseja alterar o jogador? Digite 1 se sim, qualquer outro digito para não");
+                System.out.println("Deseja adicionar/alterar o jogador? Digite 1 se sim, qualquer outro digito para não");
                 troca = input.nextInt();
                 if (troca == 1){
                     System.out.println("Qual o seu nome?");
                     nome = input.next();
                     pontos = 0;
+                    acertos.clear();
+                    erros.clear();
                 }
                 int numero1 = rand.nextInt(10), numero2 = rand.nextInt(20);
                 float numero3 = rand.nextFloat(20);
@@ -53,18 +59,25 @@ public class AdivinhaGame {
                         if (numeroUser == (numero1 - 1)){
                             System.out.println("Voce está perto...");
                             pontos = pontos + 5;
+                            erros.add(numeroUser);
                         } else if (numeroUser == (numero1 + 1)){
                             System.out.println("Voce está perto...");
                             pontos = pontos + 5;
+                            erros.add(numeroUser);
                         }else if(numeroUser == numero1){
                             System.out.println("Você acertou!!!");
                             pontos = pontos + 10;
-                            System.out.println(nome +" fez  " +pontos +" pontos");
+
                             continuar = false;
+                            acertos.add(numeroUser);
+                            System.out.println(nome +" fez  " +pontos +" pontos");
+                            System.out.println(erros.listIterator());
+                            System.out.println(acertos.listIterator());
                         } else {
                             System.out.println("Que pena, você errou...");
                             System.out.println("GAME OVER");
                             System.out.println(nome +" fez  " +pontos +" pontos");
+                            erros.add(numeroUser);
                             continuar = false;
                         }}
                         break;
@@ -77,18 +90,22 @@ public class AdivinhaGame {
                         if (numeroUser == (numero2 - 1)){
                             System.out.println("Voce está perto");
                             pontos = pontos + 5;
+                            erros.add(numeroUser);
                         } else if (numeroUser == (numero2 + 1)){
                             System.out.println("Voce está perto");
                             pontos = pontos + 5;
+                            erros.add(numeroUser);
                         }else if(numeroUser == numero2){
                             System.out.println("Você acertou!!!");
                             pontos = pontos + 10;
                             System.out.println(nome +"fez  " +pontos +" pontos");
                             continuar = false;
+                            acertos.add(numeroUser);
                         } else {
                             System.out.println("Que pena, você errou...");
                             System.out.println("GAME OVER");
                             System.out.println(nome +"fez  " +pontos +" pontos");
+                            erros.add(numeroUser);
                             continuar = false;
                         }}
                         break;
@@ -101,19 +118,23 @@ public class AdivinhaGame {
                         if (numeroUser2 == (numero3 - 1)){
                             System.out.println("Você está perto");
                             pontos = pontos + 5;
+                            erros.add(numeroUser2);
                         } else if (numeroUser2 == (numero3 + 1)){
                             System.out.println("Você está perto");
                             pontos = pontos + 5;
+                            erros.add(numeroUser2);
                         }else if(numeroUser2 == numero3){
                             System.out.println("Você acertou!!!");
                             pontos = pontos + 10;
                             System.out.println(nome +" fez  " +pontos +" pontos");
                             continuar = false;
+                            acertos.add(numeroUser2);
                         } else {
                             System.out.println("Que pena, você errou...");
                             System.out.println("GAME OVER");
                             System.out.println(nome +" fez  " +pontos +" pontos");
                             continuar = false;
+                            erros.add(numeroUser2);
                         }}
                         break;
 
