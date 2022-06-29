@@ -20,13 +20,18 @@ public class AdivinhaGame {
         int iniciar,  numeroUser, dificuldade, pontos =0, troca;
         float numeroUser2;
         Scanner input = new Scanner(System.in);
-        boolean jogar = true, continuar = true;
+        boolean jogar = true, continuar;
         Random rand = new Random();
         String nome = "";
-        List acertos = new ArrayList<>();
-        List erros = new ArrayList<>();
+        List <Integer> acertos = new ArrayList<>();
+        List <Integer>erros = new ArrayList<>();
+        List <Integer> acertos2 = new ArrayList<>();
+        List <Integer>erros2 = new ArrayList<>();
+        List <Float> acertos3 = new ArrayList<>();
+        List <Float>erros3 = new ArrayList<>();
 
-        while (jogar == true){
+
+        while (jogar){
             System.out.println("Você deseja jogar Jogo da Adivinhação?");
             System.out.println("Digite 1 para sim, 2 para não");
             iniciar = input.nextInt();
@@ -54,7 +59,7 @@ public class AdivinhaGame {
                     case 1:
                         System.out.println("O computador ja escolheu um numero");
                         continuar = true;
-                        while (continuar == true){
+                        while (continuar){
                         System.out.println("Escolha um numero inteiro de 1 a 10");
                         numeroUser = input.nextInt();
 
@@ -72,80 +77,80 @@ public class AdivinhaGame {
                             continuar = false;
                             acertos.add(numeroUser);
                             System.out.println(nome +" fez  " +pontos +" pontos");
-                            System.out.println("Os numeros incorretos inseridos: " +erros.stream().toList());
-                            System.out.println("Os numeros corretos inseridos: " +acertos.stream().toList());
+                            System.out.println("Os numeros incorretos inseridos no nivel 1: " +erros.stream().toList());
+                            System.out.println("Os numeros corretos inseridos no nivel 1: " +acertos.stream().toList());
                         } else {
                             System.out.println("Que pena, você errou...");
                             System.out.println("GAME OVER");
                             System.out.println(nome +" fez  " +pontos +" pontos");
                             erros.add(numeroUser);
-                            System.out.println("Os numeros incorretos inseridos: " +erros.stream().toList());
-                            System.out.println("Os numeros corretos inseridos: " +acertos.stream().toList());
+                            System.out.println("Os numeros incorretos inseridos no nivel 1: " +erros.stream().toList());
+                            System.out.println("Os numeros corretos inseridos no nivel 1: " +acertos.stream().toList());
                             continuar = false;
                         }}
                         break;
                     case 2:
                         System.out.println("O computador ja escolheu um número");
                         continuar = true;
-                        while (continuar == true){
+                        while (continuar){
                         System.out.println("Escolha um numero inteiro de 0 a 20");
                         numeroUser = input.nextInt();
                         if (numeroUser == (numero2 - 1)){
                             System.out.println("Voce está perto");
                             pontos = pontos + 5;
-                            erros.add(numeroUser);
+                            erros2.add(numeroUser);
                         } else if (numeroUser == (numero2 + 1)){
                             System.out.println("Voce está perto");
                             pontos = pontos + 5;
-                            erros.add(numeroUser);
+                            erros2.add(numeroUser);
                         }else if(numeroUser == numero2){
                             System.out.println("Você acertou!!!");
                             pontos = pontos + 10;
                             System.out.println(nome +"fez  " +pontos +" pontos");
                             continuar = false;
-                            acertos.add(numeroUser);
-                            System.out.println("Os numeros incorretos inseridos: " +erros.stream().toList());
-                            System.out.println("Os numeros corretos inseridos: " +acertos.stream().toList());
+                            acertos2.add(numeroUser);
+                            System.out.println("Os numeros incorretos inseridos no nivel 2: " +erros2.stream().toList());
+                            System.out.println("Os numeros corretos inseridos no nivel 2: " +acertos2.stream().toList());
                         } else {
                             System.out.println("Que pena, você errou...");
                             System.out.println("GAME OVER");
                             System.out.println(nome +"fez  " +pontos +" pontos");
-                            erros.add(numeroUser);
-                            System.out.println("Os numeros incorretos inseridos: " +erros.stream().toList());
-                            System.out.println("Os numeros corretos inseridos: " +acertos.stream().toList());
+                            erros2.add(numeroUser);
+                            System.out.println("Os numeros incorretos inseridos: no nivel 2" +erros2.stream().toList());
+                            System.out.println("Os numeros corretos inseridos: no nivel 2" +acertos2.stream().toList());
                             continuar = false;
                         }}
                         break;
                     case 3:
                         System.out.println("O computador ja escolheu um numero");
                         continuar = true;
-                        while (continuar == true){
+                        while (continuar){
                         System.out.println("Escolha um numero decimal de 0 a 20");
                         numeroUser2 = input.nextFloat();
                         if (numeroUser2 == (numero3 - 1)){
                             System.out.println("Você está perto");
                             pontos = pontos + 5;
-                            erros.add(numeroUser2);
+                            erros3.add(numeroUser2);
                         } else if (numeroUser2 == (numero3 + 1)){
                             System.out.println("Você está perto");
                             pontos = pontos + 5;
-                            erros.add(numeroUser2);
+                            erros3.add(numeroUser2);
                         }else if(numeroUser2 == numero3){
                             System.out.println("Você acertou!!!");
                             pontos = pontos + 10;
                             System.out.println(nome +" fez  " +pontos +" pontos");
                             continuar = false;
-                            acertos.add(numeroUser2);
-                            System.out.println("Os numeros incorretos inseridos: " +erros.stream().toList());
-                            System.out.println("Os numeros corretos inseridos: " +acertos.stream().toList());
+                            acertos3.add(numeroUser2);
+                            System.out.println("Os numeros incorretos inseridos no nivel 3: " +erros3.stream().toList());
+                            System.out.println("Os numeros corretos inseridos no nivel 3: " +acertos3.stream().toList());
                         } else {
                             System.out.println("Que pena, você errou...");
                             System.out.println("GAME OVER");
                             System.out.println(nome +" fez  " +pontos +" pontos");
                             continuar = false;
-                            erros.add(numeroUser2);
-                            System.out.println("Os numeros incorretos inseridos: " +erros.stream().toList());
-                            System.out.println("Os numeros corretos inseridos: " +acertos.stream().toList());
+                            erros3.add(numeroUser2);
+                            System.out.println("Os numeros incorretos inseridos no nivel 3: " +erros3.stream().toList());
+                            System.out.println("Os numeros corretos inseridos no nivel 3: " +acertos3.stream().toList());
                         }}
                         break;
 
