@@ -22,13 +22,14 @@ public class AdivinhaGame {
         boolean jogar = true, continuar = true;
         Random rand = new Random();
         String nome = "";
+        List acertos = new ArrayList<>();
+        List erros = new ArrayList<>();
 
         while (jogar == true){
             System.out.println("Você deseja jogar Jogo da Adivinhação?");
             System.out.println("Digite 1 para sim, 2 para não");
             iniciar = input.nextInt();
-            List acertos = new ArrayList<>();
-            List erros = new ArrayList<>();
+
 
             if(iniciar == 1){
                 System.out.println("Deseja adicionar/alterar o jogador? Digite 1 se sim, qualquer outro digito para não");
@@ -67,17 +68,18 @@ public class AdivinhaGame {
                         }else if(numeroUser == numero1){
                             System.out.println("Você acertou!!!");
                             pontos = pontos + 10;
-
                             continuar = false;
                             acertos.add(numeroUser);
                             System.out.println(nome +" fez  " +pontos +" pontos");
-                            System.out.println(erros.listIterator());
-                            System.out.println(acertos.listIterator());
+                            System.out.println("Os numeros incorretos inseridos: " +erros.stream().toList());
+                            System.out.println("Os numeros corretos inseridos: " +acertos.stream().toList());
                         } else {
                             System.out.println("Que pena, você errou...");
                             System.out.println("GAME OVER");
                             System.out.println(nome +" fez  " +pontos +" pontos");
                             erros.add(numeroUser);
+                            System.out.println("Os numeros incorretos inseridos: " +erros.stream().toList());
+                            System.out.println("Os numeros corretos inseridos: " +acertos.stream().toList());
                             continuar = false;
                         }}
                         break;
@@ -101,11 +103,15 @@ public class AdivinhaGame {
                             System.out.println(nome +"fez  " +pontos +" pontos");
                             continuar = false;
                             acertos.add(numeroUser);
+                            System.out.println("Os numeros incorretos inseridos: " +erros.stream().toList());
+                            System.out.println("Os numeros corretos inseridos: " +acertos.stream().toList());
                         } else {
                             System.out.println("Que pena, você errou...");
                             System.out.println("GAME OVER");
                             System.out.println(nome +"fez  " +pontos +" pontos");
                             erros.add(numeroUser);
+                            System.out.println("Os numeros incorretos inseridos: " +erros.stream().toList());
+                            System.out.println("Os numeros corretos inseridos: " +acertos.stream().toList());
                             continuar = false;
                         }}
                         break;
@@ -129,12 +135,16 @@ public class AdivinhaGame {
                             System.out.println(nome +" fez  " +pontos +" pontos");
                             continuar = false;
                             acertos.add(numeroUser2);
+                            System.out.println("Os numeros incorretos inseridos: " +erros.stream().toList());
+                            System.out.println("Os numeros corretos inseridos: " +acertos.stream().toList());
                         } else {
                             System.out.println("Que pena, você errou...");
                             System.out.println("GAME OVER");
                             System.out.println(nome +" fez  " +pontos +" pontos");
                             continuar = false;
                             erros.add(numeroUser2);
+                            System.out.println("Os numeros incorretos inseridos: " +erros.stream().toList());
+                            System.out.println("Os numeros corretos inseridos: " +acertos.stream().toList());
                         }}
                         break;
 
