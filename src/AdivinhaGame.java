@@ -48,7 +48,8 @@ public class AdivinhaGame {
                     erros.clear();
                 }
                 int numero1 = rand.nextInt(10), numero2 = rand.nextInt(20);
-                float numero3 = rand.nextFloat(20);
+                float numero3;
+                numero3 = rand.nextInt(20);
 
                 System.out.println("Qual nivel de dificuldade deseja jogar?");
                 System.out.println("1 - Easy Peasy");
