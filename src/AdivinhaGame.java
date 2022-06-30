@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.stream.Collectors;
+
 
 public class AdivinhaGame {
     public static void main(String[] args) {
@@ -62,112 +62,114 @@ public class AdivinhaGame {
                 System.out.println("3 - Enrascada Danada");
                 dificuldade = input.nextInt();
                 System.out.println();
-                switch (dificuldade){
-                    case 1:
+                switch (dificuldade) {
+                    case 1 -> {
                         System.out.println("O computador ja escolheu um numero");
                         continuar = true;
-                        while (continuar){
+                        while (continuar) {
                             System.out.println("Escolha um numero inteiro de 1 a 10");
                             numeroUser = input.nextInt();
                             System.out.println();
 
-                            if (numeroUser == (numero1 - 1)){
+                            if (numeroUser == (numero1 - 1)) {
                                 System.out.println("Voce está perto...");
                                 pontos = pontos + 5;
                                 erros.add(numeroUser);
-                            } else if (numeroUser == (numero1 + 1)){
+                            } else if (numeroUser == (numero1 + 1)) {
                                 System.out.println("Voce está perto...");
                                 pontos = pontos + 5;
                                 erros.add(numeroUser);
-                            }else if(numeroUser == numero1){
+                            } else if (numeroUser == numero1) {
                                 System.out.println("Você acertou!!!");
                                 pontos = pontos + 10;
                                 continuar = false;
                                 acertos.add(numeroUser);
-                                System.out.println(nome +" fez  " +pontos +" pontos");
-                                System.out.println("Os numeros incorretos inseridos no nivel 1: " +erros.toString());
-                                System.out.println("Os numeros corretos inseridos no nivel 1: " +acertos.toString());
+                                System.out.println(nome + " fez  " + pontos + " pontos");
+                                System.out.println("Os numeros incorretos inseridos no nivel 1: " + erros);
+                                System.out.println("Os numeros corretos inseridos no nivel 1: " + acertos);
                                 System.out.println();
                             } else {
                                 System.out.println("Que pena, você errou...");
                                 System.out.println("GAME OVER");
-                                System.out.println(nome +" fez  " +pontos +" pontos");
+                                System.out.println(nome + " fez  " + pontos + " pontos");
                                 erros.add(numeroUser);
-                                System.out.println("Os numeros incorretos inseridos no nivel 1: "+erros.toString());
-                                System.out.println("Os numeros corretos inseridos no nivel 1: " +acertos.toString());
+                                System.out.println("Os numeros incorretos inseridos no nivel 1: " + erros);
+                                System.out.println("Os numeros corretos inseridos no nivel 1: " + acertos);
                                 System.out.println();
                                 continuar = false;
-                            }}
-                        break;
-                    case 2:
+                            }
+                        }
+                    }
+                    case 2 -> {
                         System.out.println("O computador ja escolheu um número");
                         continuar = true;
-                        while (continuar){
+                        while (continuar) {
                             System.out.println("Escolha um numero inteiro de 0 a 20");
                             numeroUser = input.nextInt();
-                            if (numeroUser == (numero2 - 1)){
+                            if (numeroUser == (numero2 - 1)) {
                                 System.out.println("Voce está perto");
                                 pontos = pontos + 5;
                                 erros2.add(numeroUser);
-                            } else if (numeroUser == (numero2 + 1)){
+                            } else if (numeroUser == (numero2 + 1)) {
                                 System.out.println("Voce está perto");
                                 pontos = pontos + 5;
                                 erros2.add(numeroUser);
-                            }else if(numeroUser == numero2){
+                            } else if (numeroUser == numero2) {
                                 System.out.println("Você acertou!!!");
                                 pontos = pontos + 10;
-                                System.out.println(nome +"fez  " +pontos +" pontos");
+                                System.out.println(nome + "fez  " + pontos + " pontos");
                                 continuar = false;
                                 acertos2.add(numeroUser);
-                                System.out.println("Os numeros incorretos inseridos no nivel 2: " +erros2.toString());
-                                System.out.println("Os numeros corretos inseridos no nivel 2: " +acertos2.toString());
+                                System.out.println("Os numeros incorretos inseridos no nivel 2: " + erros2);
+                                System.out.println("Os numeros corretos inseridos no nivel 2: " + acertos2);
                                 System.out.println();
                             } else {
                                 System.out.println("Que pena, você errou...");
                                 System.out.println("GAME OVER");
-                                System.out.println(nome +"fez  " +pontos +" pontos");
+                                System.out.println(nome + "fez  " + pontos + " pontos");
                                 erros2.add(numeroUser);
-                                System.out.println("Os numeros incorretos inseridos: no nivel 2" +erros2.toString());
-                                System.out.println("Os numeros corretos inseridos: no nivel 2" +acertos2.toString());
+                                System.out.println("Os numeros incorretos inseridos: no nivel 2" + erros2);
+                                System.out.println("Os numeros corretos inseridos: no nivel 2" + acertos2);
                                 System.out.println();
                                 continuar = false;
-                            }}
-                        break;
-                    case 3:
+                            }
+                        }
+                    }
+                    case 3 -> {
                         System.out.println("O computador ja escolheu um numero");
                         continuar = true;
-                        while (continuar){
+                        while (continuar) {
                             System.out.println("Escolha um numero decimal de 0 a 20");
                             numeroUser2 = input.nextFloat();
-                            if (numeroUser2 == (numero3 - 1)){
+                            if (numeroUser2 == (numero3 - 1)) {
                                 System.out.println("Você está perto");
                                 pontos = pontos + 5;
                                 erros3.add(numeroUser2);
-                            } else if (numeroUser2 == (numero3 + 1)){
+                            } else if (numeroUser2 == (numero3 + 1)) {
                                 System.out.println("Você está perto");
                                 pontos = pontos + 5;
                                 erros3.add(numeroUser2);
-                            }else if(numeroUser2 == numero3){
+                            } else if (numeroUser2 == numero3) {
                                 System.out.println("Você acertou!!!");
                                 pontos = pontos + 10;
-                                System.out.println(nome +" fez  " +pontos +" pontos");
+                                System.out.println(nome + " fez  " + pontos + " pontos");
                                 continuar = false;
                                 acertos3.add(numeroUser2);
-                                System.out.println("Os numeros incorretos inseridos no nivel 3: " +erros3.toString());
-                                System.out.println("Os numeros corretos inseridos no nivel 3: " +acertos3.toString());
+                                System.out.println("Os numeros incorretos inseridos no nivel 3: " + erros3);
+                                System.out.println("Os numeros corretos inseridos no nivel 3: " + acertos3);
                                 System.out.println();
                             } else {
                                 System.out.println("Que pena, você errou...");
                                 System.out.println("GAME OVER");
-                                System.out.println(nome +" fez  " +pontos +" pontos");
+                                System.out.println(nome + " fez  " + pontos + " pontos");
                                 continuar = false;
                                 erros3.add(numeroUser2);
-                                System.out.println("Os numeros incorretos inseridos no nivel 3: " +erros3.toString());
-                                System.out.println("Os numeros corretos inseridos no nivel 3: " +acertos3.toString());
+                                System.out.println("Os numeros incorretos inseridos no nivel 3: " + erros3);
+                                System.out.println("Os numeros corretos inseridos no nivel 3: " + acertos3);
                                 System.out.println();
-                            }}
-                        break;
-
+                            }
+                        }
+                    }
                 }
             }else if (iniciar == 2){
                 jogar = false;
