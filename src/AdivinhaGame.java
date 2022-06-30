@@ -14,7 +14,7 @@ public class AdivinhaGame {
         System.out.println(" um numero.");
         System.out.println(" 3. Se você errar, pode jogar no- ");
         System.out.println(" vamente, mas o computador esco-  ");
-        System.out.println(" lherá um novo numero             ");
+        System.out.println(" lherá um novo numero.            ");
 
 
         int iniciar,  numeroUser, dificuldade, pontos =0, troca;
